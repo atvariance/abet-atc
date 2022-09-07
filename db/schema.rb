@@ -157,7 +157,7 @@ ActiveRecord::Schema.define(version: 20170628191637) do
   add_foreign_key "outcomes", "courses"
   add_foreign_key "results", "assignments"
 
-  create_view "assignment_reports",  sql_definition: <<-SQL
+  create_view "assignment_reports", sql_definition: <<-SQL
       SELECT outcomes.course_id,
       outcomes.label AS outcome_label,
       outcomes.description AS outcome_description,
@@ -178,8 +178,7 @@ ActiveRecord::Schema.define(version: 20170628191637) do
        JOIN outcomes ON ((outcomes.id = outcome_coverages.outcome_id)))
     ORDER BY outcomes.label, results.year DESC, results.semester DESC;
   SQL
-
-  create_view "activities",  sql_definition: <<-SQL
+  create_view "activities", sql_definition: <<-SQL
       SELECT versions.id,
       versions.item_type,
       versions.item_id,
@@ -221,5 +220,4 @@ ActiveRecord::Schema.define(version: 20170628191637) do
        JOIN departments ON ((courses.department_id = departments.id)))
     WHERE ((versions.item_type)::text = 'OutcomeCoverage'::text);
   SQL
-
 end
