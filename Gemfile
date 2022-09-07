@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "2.2.2"
+ruby "2.7.6"
 
 gem "rails", "~> 5.1.0"
 gem "active_model_serializers", "~> 0.10.6"
@@ -37,7 +37,8 @@ group :development do
   gem "browser_sync_rails"
   gem "capistrano-rails"
   gem "capistrano-rvm"
-  gem "gssapi", git: "git@github.com:derekprior/gssapi.git"
+  #gem "gssapi", git: "git@github.com:derekprior/gssapi.git"
+  gem 'gssapi'
   gem "net-ssh-krb"
   gem "spring"
   gem "spring-commands-rspec"
@@ -52,11 +53,11 @@ group :test do
   gem "shoulda-matchers"
 end
 
-group :development, :test do
-  gem "awesome_print"
-  gem "bundler-audit", require: false
-  gem "byebug"
-  gem "factory_girl_rails"
-  gem "pry-rails"
-  gem "rspec-rails"
-end
+#group :development, :test do
+#  gem "awesome_print"
+#  gem "bundler-audit", require: false
+#  gem "byebug"
+#  gem "factory_bot_rails"
+#  gem "pry-rails"
+#  gem "rspec-rails"
+#end

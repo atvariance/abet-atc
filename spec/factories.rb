@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   sequence(:label) { |n| ("A".."ZZZ").to_a[n - 1] }
   sequence(:name) { |n| "The #{n.ordinalize} Name" }
   sequence(:nickname) { |n| "Nickname #{n}" }
